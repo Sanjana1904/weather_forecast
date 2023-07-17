@@ -15,10 +15,13 @@ button.addEventListener('click', function(event) {
     })
     .then(data => {
       var tempValue = data['main']['temp'];
+      var nameValue = data['name'];
       var humidityValue = data['main']['humidity'];
       var descValue = data['weather'][0]['description']; 
+
       
-      weatherInfoDiv.innerHTML = "<p>Temp - " + tempValue + "&deg;C</p>";
+      weatherInfoDiv.innerHTML = "<p>Location -" +nameValue + "</p>";
+      weatherInfoDiv.innerHTML += "<p>Temp - " + tempValue + "&deg;C</p>";
       weatherInfoDiv.innerHTML += "<p>Desc - " + descValue + "</p>";
       weatherInfoDiv.innerHTML += "<p>Humidity - " + humidityValue + "</p>";
 
